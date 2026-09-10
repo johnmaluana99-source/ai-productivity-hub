@@ -43,6 +43,11 @@ type PlannedTask = {
   done: boolean;
 };
 
+type ChatMessage = {
+  role: "assistant" | "user";
+  text: string;
+};
+
 const workspaces = [
   { id: "email" as const, label: "Email Writer", icon: Mail, description: "Craft polished messages" },
   {
@@ -104,7 +109,8 @@ function Index() {
   const [workspace, setWorkspace] = useState<Workspace>("email");
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const current = workspaces.find((item) => item.id === workspace) ?? workspaces[0];
+  const current = workspaces.find((item) => item.id === workspace);
+  if (!current) return null;
 
   function selectWorkspace(next: Workspace) {
     setWorkspace(next);
@@ -333,7 +339,7 @@ function PlannerWorkspace() {
     window.setTimeout(() => {
       const titles = taskInput.split("\n").map((item) => item.trim()).filter(Boolean);
       const times = range === "Daily" ? ["9:00 – 10:30 AM", "10:45 – 11:30 AM", "1:00 – 2:00 PM", "2:15 – 3:15 PM", "4:00 – 4:30 PM"] : ["Monday • 9:00 AM", "Tuesday • 10:30 AM", "Wednesday • 1:00 PM", "Thursday • 2:00 PM", "Friday • 10:00 AM"];
-      setTasks((titles.length ? titles : sampleTasks.map((task) => task.title)).map((title, index) => ({ id: Date.now() + index, title, time: times[index % times.length], priority: index < 2 ? "High" : index < 4 ? "Medium" : "Low", done: false })));
+      setTasks((titles.length ? titles : sampleTasks.map((task) => task.title)).map((title, index) => ({ id: Date.now() + index, title, time: times[index % times.length] ?? "Choose a time", priority: index < 2 ? "High" : index < 4 ? "Medium" : "Low", done: false })));
       setGenerating(false);
     }, 650);
   }
@@ -395,7 +401,7 @@ function TaskRow({ task, onChange }: { task: PlannedTask; onChange: (task: Plann
 function ChatWorkspace() {
   const [input, setInput] = useState("");
   const [thinking, setThinking] = useState(false);
-  const [messages, setMessages] = useState([
+  const [messages, setMessages] = useState<ChatMessage[]>([
     { role: "assistant" as const, text: "Good morning, Alex. I’m your AI workplace assistant. I can help you prepare for meetings, refine ideas, summarise information, and work through everyday challenges. What would you like to tackle?" },
   ]);
   const suggestions = ["Help me prepare for a 1:1", "Draft a project update", "How should I prioritise today?"];
