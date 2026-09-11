@@ -1,58 +1,40 @@
-# AI Productivity Hub
+# AI Workplace Productivity Assistant
 
-Build a modern, responsive web application called AI Workplace Productivity Assistant.
+## Project Overview
 
-Features to include:
+AI Workplace Productivity Assistant is a modern web application designed to help professionals automate everyday workplace tasks using Artificial Intelligence.  
 
-Smart Email Generator – Users can generate professional emails with selectable tones: Formal, Friendly, or Persuasive. The output must be editable.
+The application provides a clean and professional dashboard where users can generate emails, plan their tasks, and interact with an AI workplace assistant — all in one place.
 
-AI Task Planner – Users can generate a daily or weekly schedule. Tasks should be prioritised (High, Medium, Low). The output must be editable.
+This project was developed as part of the CAPACITI AI Skills Acceleration Programme.
 
-AI Chatbot Interface – An interactive workplace assistant that responds to user questions and prompts.
+## Features Implemented
 
-Design Requirements:
+- **Smart Email Generator**  
+  Generate professional emails with three different tones: Formal, Friendly, and Persuasive. Users can edit the AI-generated email before using it.
 
-Clean, modern dashboard layout (SaaS style)
+- **AI Task Planner**  
+  Create daily or weekly schedules. The AI prioritises tasks into High, Medium, and Low priority. Users can edit the generated plan.
 
-Sidebar navigation
+- **AI Chatbot Interface**  
+  An interactive AI workplace assistant that responds to user questions and prompts in real time.
 
-Fully responsive (desktop and mobile)
+- **Modern Dashboard UI**  
+  Clean sidebar navigation and responsive design that works on both desktop and mobile devices.
 
-Professional colour scheme (blues, whites, and soft greys)
+- **Responsible AI Disclaimer**  
+  A clear disclaimer is included to promote ethical and responsible use of AI.
 
-Input fields and clear “Generate” buttons
+## Technologies and Tools Used
 
-Editable AI outputs
+- **Lovable AI** – Used to build the frontend and generate the application interface
+- **ChatGPT / Generative AI** – Used for prompt engineering and AI response generation
+- **HTML, CSS & JavaScript** – Core web technologies
+- **Responsive Design** – Mobile and desktop friendly layout
+- **GitHub** – Version control and project hosting
 
-Include a visible Responsible AI Disclaimer at the bottom of the page
+## Setup Instructions
 
-Important:
-
-No login, register, or sign-up page
-
-No backend
-
-All responses must appear as AI-generated content
-
-Focus on clean UI and usability
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/22e8af50-cfd3-4810-996e-1db3f23e9aa6).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/AI-Productivity-Assistant.git
